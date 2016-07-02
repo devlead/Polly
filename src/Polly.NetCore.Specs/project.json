@@ -3,17 +3,20 @@
   "testRunner": "xunit",
   "dependencies": {
     "xunit": {
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "include": "all"
     },
     "dotnet-test-xunit": {
-      "version": "2.2.0-preview2-build1029"
+      "version": "2.2.0-preview2-build1029",
+      "include": "all"
     },
     "Polly.NetStandard": {
       "target": "project",
       "version": "4.4.0-*"
     },
     "FluentAssertions": {
-      "version": "4.0.0.*"
+      "version": "4.0.0.*",
+      "include": "all"
     }
   },
   "buildOptions": {
@@ -39,5 +42,14 @@
         "portable-net45+win8"
       ]
     }
+  },
+  "scripts": {
+    "postcompile": [
+      "postcompilecopy"      
+    ]
+  },
+  "runtimes": {
+    "win": {}
   }
+
 }
