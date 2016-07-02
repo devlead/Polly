@@ -1,13 +1,12 @@
 # Polly
 
-Polly is a .NET 3.5 / 4.0 / 4.5 / PCL (Profile 259) library that allows developers to express transient exception- and fault-handling policies such as Retry, Retry Forever, Wait and Retry or Circuit Breaker in a fluent manner.
+Polly is a .NET 3.5 / 4.0 / 4.5 / PCL (Profile 259) / .NET Standard 1.6 library that allows developers to express transient exception- and fault-handling policies such as Retry, Retry Forever, Wait and Retry or Circuit Breaker in a fluent manner.
 
 [![NuGet version](https://badge.fury.io/nu/polly.svg)](https://badge.fury.io/nu/polly) [![Build status](https://ci.appveyor.com/api/projects/status/imt7dymt50346k5u?svg=true)](https://ci.appveyor.com/project/joelhulen/polly)
 
 ![](https://raw.github.com/App-vNext/Polly/master/Polly.png)
 
 # Installing via NuGet
-
 
     Install-Package Polly
 
@@ -21,6 +20,10 @@ There are now .NET 4.0 Async versions (via Microsoft.Bcl.Async) of the signed an
     Install-Package Polly.Net40Async-Signed
 
 **Please note:** The Polly.Net40Async package is only needed if you are targeting .NET 4.0 and need async capabilities. If you are targeting .NET 4.5 or greater, please use the standard Polly package.
+
+### .NET Core 1.0 RTM beta package
+
+A beta package supporting .NET Core 1.0 RTM (Microsoft's 27 June 2016 release) is available via [Polly issues](https://github.com/App-vNext/Polly/issues) and intended shortly via [Nuget](https://www.nuget.org/packages/polly).
 
 # Usage
 
@@ -574,9 +577,10 @@ For `CircuitBreakerPolicy<TResult>` policies:
 * [@reisenberger](https://github.com/reisenberger) - Allowed async onRetry delegates to async retry policies
 * [@Lumirris](https://github.com/Lumirris) - Add new Polly.Net40Async project/package supporting async for .NET40 via Microsoft.Bcl.Async
 * [@SteveCote](https://github.com/SteveCote) - Added overloads to WaitAndRetry and WaitAndRetryAsync methods that accept an onRetry delegate which includes the attempt count.
-* [@reisenberger](https://github.com/reisenberger) - Allowed policies to handle returned results; added strongly-typed policies Policy&lt;TResult&gt;;.
+* [@reisenberger](https://github.com/reisenberger) - Allowed policies to handle returned results; added strongly-typed policies Policy&lt;TResult&gt;
 * [@christopherbahr](https://github.com/christopherbahr) - Added optimisation for circuit-breaker hot path.
 * [@Finity](https://github.com/Finity) - Fixed circuit-breaker threshold bug.
+* [@reisenberger](https://github.com/reisenberger) and [@SamuelEnglard](https://github.com/SamuelEnglard) - Add beta release supporting .NET Standard 1.6 / .NET Core 1.0 RTM
 
 # Sample Projects
 
