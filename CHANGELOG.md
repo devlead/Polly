@@ -1,6 +1,6 @@
 ## 4.4.0-beta
 
-- Added initial beta for .NET Core 1.0 RTM (Tools Preview 2)
+- Added beta Polly package supporting .NET Core 1.0 RTM (Tools Preview 2)
 
 ## 4.3.0
 

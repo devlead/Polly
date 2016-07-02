@@ -21,9 +21,9 @@ There are now .NET 4.0 Async versions (via Microsoft.Bcl.Async) of the signed an
 
 **Please note:** The Polly.Net40Async package is only needed if you are targeting .NET 4.0 and need async capabilities. If you are targeting .NET 4.5 or greater, please use the standard Polly package.
 
-### .NET Core 1.0 RTM beta package
+### .NET Core 1.0 RTM package (beta)
 
-A beta package supporting .NET Core 1.0 RTM (Microsoft's 27 June 2016 release) is available via [Polly issues](https://github.com/App-vNext/Polly/issues) and intended shortly via [Nuget](https://www.nuget.org/packages/polly).
+A Polly beta package supporting .NET Core 1.0 RTM (Microsoft's 27 June 2016 release) is available via [Polly issues](https://github.com/App-vNext/Polly/issues) and intended shortly via [Nuget](https://www.nuget.org/packages/polly).
 
 # Usage
 
