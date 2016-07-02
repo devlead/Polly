@@ -50,7 +50,7 @@ var projectToNugetFolderMap = new Dictionary<string, string[]>() {
     { "Net35", new [] {"net35"} },
     { "Net40", new [] {"net40"} },
     { "Net45", new [] {"net45"} },
-    { "Pcl"  , new [] {"portable-net45+netcore45+wpa81+wp8", "dotnet"} }
+    { "Pcl"  , new [] {"portable-net45+netcore45+wpa81+wp8", "netstandard1.0"} },
 };
 
 var net40AsyncProjectToNugetFolderMap = new Dictionary<string, string[]>() {
