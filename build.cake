@@ -9,7 +9,7 @@ var configuration = Argument<string>("configuration", "Release");
 // EXTERNAL NUGET TOOLS
 //////////////////////////////////////////////////////////////////////
 
-#Tool "xunit.runner.console"
+#tool nuget:?package=xunit.runner.console&version=2.2.0-beta2-build3300 // Preferred syntax since cake 0.8.0.  Allows us to pull in a specific pre-release package if (as in this instance) we want to.
 #Tool "GitVersion.CommandLine"
 #Tool "Brutal.Dev.StrongNameSigner"
 
@@ -50,7 +50,8 @@ var projectToNugetFolderMap = new Dictionary<string, string[]>() {
     { "Net35", new [] {"net35"} },
     { "Net40", new [] {"net40"} },
     { "Net45", new [] {"net45"} },
-    { "Pcl"  , new [] {"portable-net45+netcore45+wpa81+wp8", "dotnet"} }
+    { "Pcl"  , new [] {"portable-net45+netcore45+wpa81+wp8", "dotnet"} },
+	{ "NetStandard", new [] {"netstandard1.6"} },
 };
 
 var net40AsyncProjectToNugetFolderMap = new Dictionary<string, string[]>() {
@@ -168,6 +169,12 @@ Task("__RunTests")
         OutputDirectory = testResultsDir,
         XmlReportV1 = true
     });
+// The below modification will run netcoreapp1.0 specs (or similar) if they are buried a directory deeper in a build tree.
+// Commented out of use until we can get the relevant xunit.runner.console copied to the netcoreapp1.0 specs (or similar) output directory, as part of build.
+//    XUnit2("./src/**/bin/" + configuration + "/**/*.Specs.dll", new XUnit2Settings {
+//       OutputDirectory = testResultsDir,
+//      XmlReportV1 = true
+//  });
 });
 
 Task("__CopyOutputToNugetFolder")

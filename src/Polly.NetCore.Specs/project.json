@@ -1,0 +1,43 @@
+﻿{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "dependencies": {
+    "xunit": {
+      "version": "2.1.0"
+    },
+    "dotnet-test-xunit": {
+      "version": "2.2.0-preview2-build1029"
+    },
+    "Polly.NetStandard": {
+      "target": "project",
+      "version": "4.4.0-*"
+    },
+    "FluentAssertions": {
+      "version": "4.0.0.*"
+    }
+  },
+  "buildOptions": {
+    "compile": {
+      "include": "..\\Polly.SharedSpecs\\**.cs"
+    },
+    "define": [
+      "PORTABLE",
+      "SUPPORTS_ASYNC"
+    ],
+    "xmlDoc": true
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0"
+        }
+      },
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}

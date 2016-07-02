@@ -1,0 +1,57 @@
+{
+  "version": "4.4.0-*",
+  "authors":
+  [
+    "Michael Wolfenden",
+    "App vNext"
+  ],
+  "copyright": "Copyright © 2016, App vNext",
+  "language": "en-us",
+  "packOptions": {
+    "iconUrl": "https://raw.github.com/App-vNext/Polly/master/Polly.png",
+    "licenseUrl": "https://raw.github.com/App-vNext/Polly/master/LICENSE.txt",
+    "owners": [
+      "App vNext"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/App-vNext/Polly.git"
+    },
+    "tags": [
+      "Exception",
+      "Handling",
+      "Policy",
+      "Retry",
+      "Wait",
+      "Circuit",
+      "Breaker"
+    ],
+    "projectUrl": "https://github.com/App-vNext/Polly"
+  },
+  "title": "Polly",
+  "description": "Polly is a .NET 3.5 / 4.0 / 4.5 / PCL (Profile 259) / NET Standard 1.6 library that allows developers to express transient exception- and fault-handling policies such as Retry, Retry Forever, Wait and Retry or Circuit Breaker in a fluent manner.",
+  "dependencies":
+  {
+    "System.Linq": "4.1.0",
+    "System.Diagnostics.Debug": "4.0.11",
+    "System.Threading": "4.0.11",
+    "System.Resources.ResourceManager": "4.0.1"
+  },
+  "buildOptions": {
+    "compile": {
+      "include": "..\\Polly.Shared\\**.cs"
+    },
+    "define": [
+      "PORTABLE",
+      "SUPPORTS_ASYNC"
+    ],
+    "xmlDoc": true,
+    "outputName": "Polly"
+  },
+  "frameworks":
+  {
+    "netstandard1.6":
+    {
+    }
+  }
+}
