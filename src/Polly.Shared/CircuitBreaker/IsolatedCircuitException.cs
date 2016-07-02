@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+#if !PORTABLE
 using System.Runtime.Serialization;
+#endif
 using System.Text;
 using Polly.CircuitBreaker;
 
