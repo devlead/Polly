@@ -1,13 +1,11 @@
-﻿{
+{
+  "supports": {},
   "dependencies": {
     "FluentAssertions": "4.0.0",
     "GitVersionTask": "3.1.2",
     "xunit": "2.1.0"
   },
   "frameworks": {
-    ".NETPortable,Version=v4.5,Profile=Profile259": {}
-  },
-  "runtimes": {
-    "win": {}
+    "netstandard1.0": {}
   }
 }
