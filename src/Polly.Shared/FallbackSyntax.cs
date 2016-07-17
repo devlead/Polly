@@ -19,6 +19,8 @@ namespace Polly
         /// <returns>The policy instance.</returns>
         public static FallbackPolicy Fallback(this PolicyBuilder policyBuilder, Action fallbackAction)
         {
+            if (fallbackAction == null) throw new ArgumentNullException("fallbackAction");
+
             Action<Exception> doNothing = _ => { };
             return policyBuilder.Fallback(fallbackAction, doNothing);
         }
@@ -34,6 +36,9 @@ namespace Polly
         /// <returns>The policy instance.</returns>
         public static FallbackPolicy Fallback(this PolicyBuilder policyBuilder, Action fallbackAction, Action<Exception> onFallback)
         {
+            if (fallbackAction == null) throw new ArgumentNullException("fallbackAction");
+            if (onFallback == null) throw new ArgumentNullException("onFallback");
+
             return policyBuilder.Fallback(fallbackAction, (exception, ctx) => onFallback(exception));
         }
 
@@ -78,6 +83,8 @@ namespace Polly
         /// <returns>The policy instance.</returns>
         public static FallbackPolicy<TResult> Fallback<TResult>(this PolicyBuilder<TResult> policyBuilder, Func<TResult> fallbackAction)
         {
+            if (fallbackAction == null) throw new ArgumentNullException("fallbackAction");
+
             Action<DelegateResult<TResult>> doNothing = _ => { };
             return policyBuilder.Fallback(fallbackAction, doNothing);
         }
@@ -93,6 +100,9 @@ namespace Polly
         /// <returns>The policy instance.</returns>
         public static FallbackPolicy<TResult> Fallback<TResult>(this PolicyBuilder<TResult> policyBuilder, Func<TResult> fallbackAction, Action<DelegateResult<TResult>> onFallback)
         {
+            if (fallbackAction == null) throw new ArgumentNullException("fallbackAction");
+            if (onFallback == null) throw new ArgumentNullException("onFallback");
+
             return policyBuilder.Fallback(fallbackAction, (outcome, ctx) => onFallback(outcome));
         }
 

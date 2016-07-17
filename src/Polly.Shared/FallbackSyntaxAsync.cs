@@ -21,7 +21,6 @@ namespace Polly
         /// <param name="policyBuilder">The policy builder.</param>
         /// <param name="fallbackAction">The fallback delegate.</param>
         /// <exception cref="System.ArgumentNullException">fallbackAction</exception>
-        /// <exception cref="System.ArgumentNullException">onFallbackAsync</exception>
         /// <returns>The policy instance.</returns>
         public static FallbackPolicy FallbackAsync(this PolicyBuilder policyBuilder, Func<CancellationToken, Task> fallbackAction)
         {
